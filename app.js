@@ -157,9 +157,7 @@ app.get('/showUsers', async (req, res) => {
 app.post('/addData', async (req, res) => {
     const { temperatura, humedad, metano, ambiente, luz } = req.body;
     const currentTime = new Date().toLocaleString();
-
-    luz = 3038.18 - 2.41 * luz;
-
+    
     try {
         // Save the data to the database
         await Data.create({
